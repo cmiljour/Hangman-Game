@@ -19,8 +19,7 @@ function init() {
     document.getElementById("userText").innerHTML = answersArray.join(' ');
     document.getElementById("guesses").innerHTML = guesses;
     document.getElementById("wins").innerHTML = wins;
- 
-
+    document.getElementById("guessed").innerHTML = guessArray;
     };
 
 window.onload = function(){
@@ -35,8 +34,10 @@ document.onkeyup = function(input) {
     //Record Countdown
     if (input.key) {
         guesses--;
+        
         // add letters selected to guessArray to be published to screen
         guessArray.push(userInput);
+
         // Display Letters guessed in HTML
         document.getElementById("guessed").innerHTML = guessArray;
         
