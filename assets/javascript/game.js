@@ -1,5 +1,5 @@
 
-    var wordArray = ['india', 'canada', 'egypt', 'syria', 'kazakhastan'];
+    var wordArray = ['INDIA', 'CANADA', 'EGYPT', 'SYRIA', 'KAZAKHSTAN', 'MEXICO', 'ZIMBABWE', 'THAILAND'];
     var randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
     var word = randomWord.split([]);
     var guesses;
@@ -29,18 +29,23 @@ window.onload = function(){
 document.onkeyup = function(input) {
 
     // var userInput = input.key;
-    var userInput = (input.key).toLowerCase();
+    var userInput = (input.key).toUpperCase();
 
     //Record Countdown
     if (input.key) {
-        guesses--;
-        
-        // add letters selected to guessArray to be published to screen
+        // if user's letter is not in the chosen word array, guesses--
+        if ((word.includes(userInput)) == false) {
+            guesses--;
+        }
+        // add letters guessed to guessArray to be published to screen
         guessArray.push(userInput);
 
         // Display Letters guessed in HTML
         document.getElementById("guessed").innerHTML = guessArray;
         
+        
+        // compare user's letter to the word array and if it finds
+        // a match, copy the location and letter to the answers array
         for (var i = 0; i < word.length; i++) {
             if (userInput === word[i]) {
                 answersArray[i] = word[i];  
