@@ -3,17 +3,19 @@
 <head>
 	<title></title>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
 		<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<script type="text/javascript" src="./assets/javascript/game.js"  ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
 </head>
-<body style="background-image: url(world.jpg);">
+<body style="background-image: url(./assets/images/world.jpg);">
     <div class="container">
-        <div class="jumbotron" align="center">
+        <div class="jumbotron" align="center" style="background: #a37e54" >
             <h1>Country quiz!</h1>
-            <h2>Guess the country or the man hangs!</h2>
+            <h2>Guess the country or you lose BIGLY!</h2>
             <h3>PRESS ANY KEY TO GET STARTED</h3>
             <h4>WINS = <div id="wins" style="display: inline;"></div></h4>
                 
@@ -25,5 +27,13 @@
             <h3>Letters guessed: <span id="guessed"></span></h3>
         </div>
     </div>
+
+    <div style="position: relative; left:0; top:0; height: 250px;" id="divanimate" >
+        
+        <h1 style="color: white;">GOOD LUCK PUHRINCESS!</h1>
+    
+
+    </div>
+
 </body>
 </html>

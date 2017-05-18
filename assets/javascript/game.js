@@ -7,6 +7,8 @@
     var wins = 0;
     var guessArray = [];
     
+
+
 function init() {
     randomWord = wordArray[Math.floor(Math.random() * wordArray.length)];
     word = randomWord.split([]);
@@ -23,6 +25,8 @@ function init() {
     };
 
 window.onload = function(){
+    $('#divanimate').animate({ 'left': '+=500px' },2000);
+    $('#divanimate').animate({ 'left': '-=125px' },2000);
     init();
 };
 
