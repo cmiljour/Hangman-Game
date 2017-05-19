@@ -8,7 +8,8 @@
     var answersArray = [];
     var wins = 0;
     var guessArray = [];
-    
+    var badArray = [];
+
     
 
     // Create a function to make it easier to reload game when win or lose
@@ -20,7 +21,9 @@ function init() {
     // reinitialize variables to starting state
     answersArray = [];
     guessArray = [];
+    badArray = [];
     guesses = 15;
+
     // set the user guess line to begin with all "_"
     for (var i = 0; i < word.length; i++) {
         answersArray[i] = "_";
@@ -49,8 +52,9 @@ document.onkeyup = function(input) {
     // run through game logic based on key press
     if (input.key) {
         // if user's letter is not in the chosen word array, guesses--
-        if ((word.includes(userInput)) == false) {
+        if (((word.includes(userInput)) == false) & ((badArray.includes(userInput)) == false))  {
             guesses--;
+            badArray.push(userInput);
 
         }
         // add letters guessed to guessArray to be published to screen
